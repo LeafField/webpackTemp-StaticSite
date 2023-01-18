@@ -3,6 +3,7 @@ const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const HtmlEntries = fs
   .readdirSync(path.resolve(__dirname, "src"))
@@ -92,6 +93,15 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
+
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "src/images",
+          to: "images",
+        },
+      ],
+    }),
 
     //複数のCSSを生成したい場合styleの部分を[name]へ変更すると対応するjavascriptファイルの名前へ変更されます
     new MiniCssExtractPlugin({

@@ -79,15 +79,6 @@ module.exports = {
           },
         ],
       },
-      // 画像ファイルの取り込み、現状では圧縮は別ツールを使用
-      {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        loader: "file-loader",
-      },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
     ],
   },
 

@@ -86,7 +86,7 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.ttf/,
+        test: /\.(ttf|otf|woff)/,
         generator: {
           filename: `font/[name][ext]`,
         },
